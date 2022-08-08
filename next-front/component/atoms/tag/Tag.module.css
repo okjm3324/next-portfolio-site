@@ -1,0 +1,15 @@
+.tag {
+display:flex;
+align-items: center;
+  height: 40px;
+  width:80px;
+  border-radius: 7px;
+  border:1px solid  #fb8c00;
+}
+
+.tag-text {
+  color:#fb8c00;
+  margin:auto;
+
+  font-size: 18px;
+}
