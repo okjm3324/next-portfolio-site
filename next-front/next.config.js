@@ -11,7 +11,7 @@ module.exports = () => {
   const rewrites = () =>{
     return [
       {
-        source: "http://localhost:3000/posts",
+        source: "/posts",
         destination: "http://localhost:5000/api/posts",
       }
     ]

@@ -6,60 +6,66 @@ import Link from "next/link"
 import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import { getPostsPaths } from '../../lib/post';
+import Footer from "../../component/molcules/footer/Footer"
 
 
 //SSGトライ
 
-// //SSGの全てのパス設定
-// export function getStagicPaths () {
-//   const paths = getPostsPaths(posts)
-  
-//   return {
-//     paths,
-//     fallback:false,
-//   }
 
-// }
+// //SSGの全てのパス設定
+export async function getStaticPaths () {
+    const res = await axios.get("http://localhost:5000/api/posts")
+    
+    const allPostsData = res.data
+    const allFileId = allPostsData.map((post)=>{return post.id})
+     const paths = getPostsPaths(allFileId)
+  
+   return {
+     paths,
+     fallback:false,
+   }
+ }
 
 // //SSGのprops設定
-// export function getStaticProps (id){
-//   const postData = getPostData(posts,id)
-  
-//   return {
-//     props : {
-//       postData
-//     }
-//   }
-// }
+ export async function getStaticProps ({params}){
+   const res = await axios.get(`http://localhost:5000/api/posts/${params.id}`)
+   const postData = JSON.parse(JSON.stringify(res.data));
+   return {
+    props : {
+       postData
+     }
+   }
+ }
 
 //SSGトライ　ここまで
 
  //const Work = ({postData}) => {
-  const Work = () => {
+  const Work = ({postData}) => {
   
 
 
-  // axtiosを使ったdetafetchパターン
- const router = useRouter();
-  const [post,setPost] = useState({})
-  const [skills,setSkills] = useState([])
+//   // axtiosを使ったdetafetchパターン
+//  const router = useRouter();
+//   const [post,setPost] = useState({})
+//   const [skills,setSkills] = useState([])
 
-  useEffect(()=>{
-    console.log(router.query.id)
-    const fetchArticle = async ()=>{
-      const article = await axios.get(`/posts`)
-      const posts = article.data
-      const tarPost = posts.find((post)=>{
-       return post.id === router.query.id
-      })
-      setPost(tarPost)
-      setSkills(tarPost.skills)
-    }
+//   useEffect(()=>{
+//     console.log(router.query.id)
+//     const fetchArticle = async ()=>{
+//       const article = await axios.get(`/posts`)
+//       const posts = article.data
+//       const tarPost = posts.find((post)=>{
+//        return post.id === router.query.id
+//       })
+//       setPost(tarPost)
+//       setSkills(tarPost.skills)
+//     }
 
-    fetchArticle()
-    console.log(post)
-    console.log(skills)
-  },[])
+//     fetchArticle()
+//     console.log(post)
+//     console.log(skills)
+//   },[])
 
 
 
@@ -73,18 +79,18 @@ import axios from 'axios';
         </div>
 
         <div className={styles['work-title']}>
-          <h1>{post.title}</h1>
+          <h1>{postData.title}</h1>
         </div>
         <div className={styles['workdetail-description']}>
-          <p>{post.content}</p>
+          <p>{postData.content}</p>
         </div>
         <div className={styles.skills}>
           <ul className={styles['skill-items']}>
          
            
-            {skills.map((skill)=>{
+            {postData.skills.map((skill)=>{
                 return(
-                  <li id={skill}className={styles['skill-item']}> <Tag tagText={skill}/></li>
+                  <li key={skill} className={styles['skill-item']}> <Tag tagText={skill}/></li>
                 )
             })}
           </ul>
@@ -98,6 +104,7 @@ import axios from 'axios';
         
         <Link className={styles['back-link']} href="/">Back</Link>
     </div>
+    <Footer />
 
     </div>
   )

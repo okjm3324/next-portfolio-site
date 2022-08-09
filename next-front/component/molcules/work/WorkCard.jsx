@@ -36,7 +36,7 @@ const WorkCard = (props) => {
          <div className={styles['desc-text']}>
          <p>{post.content}</p>
          <ul>
-         {post.skills.map((skill)=>(<li>{skill}</li>))}
+         {post.skills.map((skill)=>(<li key={skill}>{skill}</li>))}
          </ul>
          
          </div>

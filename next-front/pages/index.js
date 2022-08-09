@@ -55,7 +55,7 @@ export default function Home({allPostsData}) {
 
       {allPostsData.map((post)=>{
         return(
-          <WorkCard post={post} />
+          <WorkCard key={post.id} post={post} />
         )
 
       })}
