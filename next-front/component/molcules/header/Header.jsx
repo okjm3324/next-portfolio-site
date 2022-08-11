@@ -14,7 +14,7 @@ const Header = () => {
         
         <div className={styles['menu-item']}>
         <Link href="/" >
-          <span className={styles.menu}>work</span></Link>
+          <span className={styles.menu}>works</span></Link>
         </div>
         <div className={styles['menu-item']}>
           <Link href="/about/About" >

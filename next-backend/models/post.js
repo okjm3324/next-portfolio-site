@@ -11,8 +11,13 @@ const PostSchema = new Schema({
   thumbnail:{type:String,
             default:"" },
   id:String,
+  summary:{type:String},
+  manualDesc:{type:String},
+        
   content:{type:String,
           required:true},
+  difficulty:{type:String,},
+
   skills:{type:Array,
           default:[],},
   gitpath:{type:String,

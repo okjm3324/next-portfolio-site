@@ -25,19 +25,27 @@ const WorkCard = (props) => {
         </div>
 
         <div className={styles['work-description']}>
+        <Link href={{pathname:`/work/${post.id}`}}>
           <div className={styles['work-title']}>
             <h1>{post.title}</h1>
-        
           </div>
-          <div className={styles['card-logo']}>
-           <CardGitLogo />
-   
+          </Link>
+        <div className={styles.skillBox}>
+          <div>
+          {post.skills.map((skill,index)=>{
+            return (index !== post.skills.length - 1 ? (<span key={skill}>{skill} / </span>):(<span key={skill}>{skill}</span>))})
+          }
+          
           </div>
+          <Link href={post.gitpath} >
+              <div className={styles['card-logo']}>
+                  <CardGitLogo />
+              </div>
+          </Link>
+        </div>
+          
          <div className={styles['desc-text']}>
-         <p>{post.content}</p>
-         <ul>
-         {post.skills.map((skill)=>(<li key={skill}>{skill}</li>))}
-         </ul>
+         <p>{post.summary}</p>
          
          </div>
          

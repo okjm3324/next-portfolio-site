@@ -1,4 +1,5 @@
 
+import Footer from '../../component/molcules/footer/Footer'
 import Header  from '../../component/molcules/header/Header'
 
 import styles from "./About.module.css"
@@ -30,7 +31,7 @@ const  About = () => {
     
     </div>
     
-    
+    <Footer />
     </div>
     
     

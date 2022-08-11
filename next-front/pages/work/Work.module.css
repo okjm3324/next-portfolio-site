@@ -6,6 +6,9 @@
   align-items: center;
 
   background-color: rgb(229, 224, 233);
+  position: relative;
+  padding-bottom: 150px;
+  box-sizing: border-box;
 }
 
 .work-thumbnail-img {
@@ -20,8 +23,8 @@
 .skill-items {
   display: flex;
   align-items: center;
-  justify-content: start;
-  
+ 
+  /*justify-content: start;*/
 }
 
 .work-title>h1{
@@ -42,6 +45,7 @@
   border-radius: 7px;
   border:3px solid rgb(144, 144, 151);
   background-color: rgb(229, 224, 233);
+  margin-top: 20px;
 }
 
 .content-img {
@@ -51,9 +55,19 @@
 }
 
 .back-link {
-  margin-top: 32px;
+  margin-top: 100px;
+  margin-bottom: 100px;
   font-weight: bold;
   color:rgb(67, 67, 71);
-  font-size: 24px;
+  font-size: 30px;
+
+}
+.back-link:hover{
+  opacity: 0.5;
+} 
+
+.footer {
+  position:absolute;
+  bottom: 0;
 }
 
