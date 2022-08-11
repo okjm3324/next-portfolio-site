@@ -10,8 +10,9 @@ const HomeLayout = ({children}) => {
       <Header/>
       <div className={styles['works-container']}>
       {children}
+      
       </div>
-      <Footer/>
+      <Footer className={styles.homeFooter} />
     </div>
   )
 }

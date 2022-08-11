@@ -81,30 +81,41 @@ export async function getStaticPaths () {
         <div className={styles['work-title']}>
           <h1>{postData.title}</h1>
         </div>
+        <div className={styles.skills}>
+        <ul className={styles['skill-items']}>
+       
+         
+          {postData.skills.map((skill)=>{
+              return(
+                <li key={skill} className={styles['skill-item']}> <Tag tagText={skill}/></li>
+              )
+          })}
+        </ul>
+      </div>
         <div className={styles['workdetail-description']}>
           <p>{postData.content}</p>
         </div>
-        <div className={styles.skills}>
-          <ul className={styles['skill-items']}>
-         
-           
-            {postData.skills.map((skill)=>{
-                return(
-                  <li key={skill} className={styles['skill-item']}> <Tag tagText={skill}/></li>
-                )
-            })}
-          </ul>
-        </div>
-
+    
+          <h1>How it works?</h1>
         <div className={styles['content-images']}>
           <img className={styles['content-img']} src='/assets/thumbnail/aca8812f.jpg'></img>
 
         </div>
-
+        <div className='difficultContainer'>
+        <h1>the most difficult part</h1>
+        <div className={styles['workdetail-description']}>
+        <p>{postData.difficulty}</p>
+        </div>
         
-        <Link className={styles['back-link']} href="/">Back</Link>
+        </div>
+        
+        <Link  href="/">
+          <a className={styles['back-link']} >
+          Back
+          </a>
+        </Link>
     </div>
-    <Footer />
+    <Footer className={styles.footer}/>
 
     </div>
   )

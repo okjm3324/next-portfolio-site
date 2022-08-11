@@ -2,8 +2,10 @@
   display: -webkit-flex;
   display: flex;
   align-items:center;
+  justify-content: space-between;
+
   width: 700px;
-  height: 500px;
+  height: 300px;
   background-color: #dcdcdc;
   border-radius: 8px;
   padding: 20px;
@@ -38,26 +40,90 @@
   opacity: 0.7;
 }
 
+.work-title {
+  align-items: center;
+  color:#2a2929;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+
+  height: 75px;
+  
+}
+.work-title::after{
+ 
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  opacity: 0;
+  visibility: hidden;
+  transition: .0s;
+}
+
+.work-title:hover::after {
+  bottom: 20px;
+  opacity: 1;
+  visibility: visible;
+}
 
 
 .work-description { 
+  margin-top: 20px;
   display:block;
-  background-color: rgb(160, 160, 160);
+
   overflow: visible;
+  height: 100%;
 
   
 }
 
 .card-git-logo {
-  height: 12px !important;
-  width: 12px !important;
+  height: 10px !important;
+  width: 10px !important;
 }
 
 .card-logo {
-  display: flex;
+  
+  margin-left:18px;
   justify-content: flex-end;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+.card-logo::after {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #333;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: transform .0s;
+}
+.card-logo:hover::after {
+  transform: scale(1, 1);
 }
 
+
 .desc-text {
+  margin-top: 60px;
   width: 300px;
+  
+}
+
+.skillBox {
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
+  margin-top: 0;
+ 
+  color:rgb(67, 67, 71)
+
 }
