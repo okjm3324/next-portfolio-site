@@ -1,6 +1,7 @@
 .about-container {
   width: 100%;
-  height: 1260px;
+  height: auto;
+  min-height: 672px;
   display:flex;
   flex-direction: column;
   align-items: center;
@@ -17,3 +18,15 @@
 .about-ul {
   list-style:circle;
 }
+
+.back-link {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  font-weight: bold;
+  color:rgb(67, 67, 71);
+  font-size: 30px;
+
+}
+.back-link:hover{
+  opacity: 0.5;
+} 

@@ -4,7 +4,7 @@
   flex-wrap: wrap;
   width: 100%;
  height: auto;
- min-height: 75%;
+ min-height: 70%;
  
 }
 
@@ -21,6 +21,8 @@
 
 }
 .homeFooter {
+  
+
   position:absolute;
   bottom: 0;
 }

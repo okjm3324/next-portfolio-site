@@ -3,17 +3,17 @@
 
 .header{
   position: sticky;
-height: 263px;
+
   top:0;
   background-color: #dcdcdc;
-  height: auto;
+  height: 270px;
   z-index: 10;
 }
 
 .header-wrapper {
   display: flex;
   flex-direction: column;
-  height: auto;
+  height: 100%;
 }
 
 .header-title  {
@@ -21,10 +21,14 @@ font-size: 70px;
 color:rgb(67, 67, 71);
 font-weight: bold;
 margin:12px 12px;
+display: flex;
+align-items: center;
+justify-content:flex-start
 
 }
-@media (max-width:990px){
-  .header-title {
+
+@media (max-width: 990px) {
+  .header-title{
     font-size: 70px;
     color:rgb(67, 67, 71);
     font-weight: bold;
@@ -33,12 +37,7 @@ margin:12px 12px;
     align-items: center;
     justify-content: center;
   }
-
-  .menu-items {
-    display: none;
-    
   
-  }
 }
 
 .menu-items {
@@ -48,59 +47,6 @@ margin:12px 12px;
   margin-right: 32px;
 
 }
-@media (max-width:990px){
-.menu-items {
-  display: none;
-}
-
-}
-
-.mobile-menu-items {
-  display: none;
-}
-.mobile-menu-item {
-  display: none;
-}
-
-@media (max-width:990px){
-  .mobile-menu-items {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top:200px;
-    width: 100%;
-    right: 0;
-    background-color: #181818;
-    justify-content: center;
-    align-content: center;
-  }
-  .mobile-menu-item {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    cursor: pointer;
-    
-  }
-
-}
-
-
-
-
- 
-
-
-
-
-
-.menu-item {
-justify-content: center;
-  cursor: pointer;
-}
-
-
 
 .menu-item {
   margin-top: 30px;
@@ -122,22 +68,14 @@ justify-content: center;
 .snslogo-items {
  display: flex;
  align-items: center;
- justify-content: flex-end;
+ justify-content: center;
  margin:32px;
-}
-@media (max-width:990px){
-  .snslogo-items {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin:32px;
-    margin-right: 12%;
-   }
 }
 
 .snslogo-item {
   margin-left: 50px;
   font-size: 12px;
+
  
 }
 
@@ -171,16 +109,8 @@ justify-content: center;
   }
 }
 
-.hamburgerIcon {
-  display: none;
-}
-@media (max-width:990px){
-  .hamburgerIcon {
-    display:flex;
-    position:absolute;
-    right: 3%;
-    top:5%;
-    cursor: pointer;
-   }
-
+.burgerIcon {
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }

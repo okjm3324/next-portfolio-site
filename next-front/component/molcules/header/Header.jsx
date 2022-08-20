@@ -3,28 +3,58 @@
 import { GitLogo,TwitterLogo,LinkedinLogo,MailLogo, ResumeLogo } from '../../atoms/Icons/Icons'
 import styles from"./Header.module.css"
 import Link from "next/link"
+import {CgCloseO, CgMenuRound} from "react-icons/cg"
+
+import { useState } from 'react'
+
+
 
 
 const Header = () => {
+  //state for hamburger
+  const [isOpen,setIsOpen] = useState(false)
+  const hamburgerIcon =  <CgMenuRound className={styles.hamburgerIcon} size="2.4rem" color="black" onClick={()=>setIsOpen(!isOpen)}/>
+  const closeIcon =  <CgCloseO className={styles.hamburgerIcon} size="2.4rem" color="black" onClick={()=>setIsOpen(!isOpen)}/>
+
   return (
+
+    
     <div className={styles.header}>
     <div className={styles['header-wrapper']}>
+   
     <span className={styles['header-title']}>PORTFOLIO</span>
-    <div className={styles['menu-items']}>  
-        
-        <div className={styles['menu-item']}>
-        <Link href="/" >
-          <span className={styles.menu}>works</span></Link>
-        </div>
-        <div className={styles['menu-item']}>
-          <Link href="/about/About" >
+    {isOpen ? closeIcon : hamburgerIcon}
+    {isOpen && 
+      <div className={styles['mobile-menu-items']}>  
+          <div className={styles['mobile-menu-item']}>
+            <Link href="/" >
+            <span className={styles.menu}>works</span></Link>
+          </div>
+          <div className={styles['mobile-menu-item']}>
+            <Link href="/about/About" >
             <span className={styles.menu}>about me</span>
-          </Link>
-        </div>
-        <div className={styles['menu-item']}>
-          <span className={styles.menu}>contact</span>
-       </div>
+            </Link>
+          </div>
+            <div className={styles['mobile-menu-item']}>
+            <span className={styles.menu}>contact</span>
+          </div>
       </div>
+    }
+    <div className={styles['menu-items']}>  
+          <div className={styles['menu-item']}>
+            <Link href="/" >
+            <span className={styles.menu}>works</span></Link>
+          </div>
+          <div className={styles['menu-item']}>
+            <Link href="/about/About" >
+            <span className={styles.menu}>about me</span>
+            </Link>
+          </div>
+            <div className={styles['menu-item']}>
+            <span className={styles.menu}>contact</span>
+          </div>
+      </div>
+
 
       <div className={styles['snslogo-items']}>
         

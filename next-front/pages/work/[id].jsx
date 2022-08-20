@@ -75,7 +75,7 @@ export async function getStaticPaths () {
         <Header/>
     <div className={styles['detail-container']}>
         <div className={styles['work-thumbnail']}>
-          <img className={styles['work-thumbnail-img']} src="/assets/thumbnail/aca8812f.jpg"></img>
+          <img className={styles['work-thumbnail-img']} src={postData.thumbnail}></img>
         </div>
 
         <div className={styles['work-title']}>
@@ -95,19 +95,19 @@ export async function getStaticPaths () {
         <div className={styles['workdetail-description']}>
           <p>{postData.content}</p>
         </div>
-    
-          <h1>How it works?</h1>
+          
+          <div className='subtitle'><h1>How it works</h1></div>
         <div className={styles['content-images']}>
-          <img className={styles['content-img']} src='/assets/thumbnail/aca8812f.jpg'></img>
+          <img className={styles['content-img']} src={postData.workImg ? postData.workImg : "" }></img>
 
         </div>
-        <div className='difficultContainer'>
-        <h1>the most difficult part</h1>
+        
+       <h1>the most difficult part</h1>
         <div className={styles['workdetail-description']}>
         <p>{postData.difficulty}</p>
         </div>
         
-        </div>
+  
         
         <Link  href="/">
           <a className={styles['back-link']} >
