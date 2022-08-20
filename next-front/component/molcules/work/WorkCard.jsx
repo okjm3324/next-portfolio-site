@@ -20,7 +20,7 @@ const WorkCard = (props) => {
         
         <div className={styles['thumbnail']}>
           <Link href={{pathname:`/work/${post.id}`}}>
-           <img className={styles['thumbnail-img']} src='/assets/thumbnail/aca8812f.jpg'></img>
+           <img className={styles['thumbnail-img']} src={post.thumbnail}></img>
           </Link>
         </div>
 
