@@ -51,7 +51,9 @@ const Header = () => {
             </Link>
           </div>
             <div className={styles['menu-item']}>
-            <span className={styles.menu}>contact</span>
+            <Link href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=okjm.yuma@gmail.com">
+             <a target="_blank" className={styles.menu}>contact</a>
+            </Link>
           </div>
       </div>
 
@@ -75,7 +77,7 @@ const Header = () => {
           <ResumeLogo />
         </div>
         <div  className={styles['snslogo-item']}>
-           <MailLogo  />
+           <a target="_blank" href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=okjm.yuma@gmail.com"><MailLogo  /></a>
         </div>
         
       </div>
